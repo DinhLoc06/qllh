@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UniRoom – Hệ thống quản lý phòng học và lịch học đại học" />
+  <title>UniRoom – Quản lý Phòng học &amp; Lịch học</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+     SIDEBAR
+============================================================ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Logo / Brand -->
+    <div class="sidebar-brand">
+      <div class="brand-icon"><i class="fa-solid fa-university"></i></div>
+      <div class="brand-text">
+        <span class="brand-name">UniRoom</span>
+        <span class="brand-sub">Quản lý trường học</span>
+      </div>
+    </div>
+
+    <!-- User Panel -->
+    <div class="sidebar-user-panel">
+      <div class="user-avatar">AD</div>
+      <div>
+        <span class="user-name">Admin</span>
+        <span class="online-badge">Online</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Tổng quan</div>
+      <a href="#" class="nav-item active" data-page="dashboard">
+        <i class="fa-solid fa-gauge-high"></i><span>Dashboard</span>
+      </a>
+
+      <div class="nav-section-label">Quản lý</div>
+      <a href="#" class="nav-item" data-page="buildings">
+        <i class="fa-solid fa-building"></i><span>Tòa nhà</span>
+      </a>
+      <a href="#" class="nav-item" data-page="rooms">
+        <i class="fa-solid fa-door-open"></i><span>Phòng học</span>
+      </a>
+      <a href="#" class="nav-item" data-page="schedule">
+        <i class="fa-solid fa-calendar-days"></i><span>Lịch học</span>
+      </a>
+
+      <div class="nav-section-label">Khác</div>
+      <a href="#" class="nav-item" data-page="reports">
+        <i class="fa-solid fa-chart-bar"></i><span>Báo cáo</span>
+      </a>
+      <a href="#" class="nav-item" data-page="settings">
+        <i class="fa-solid fa-gear"></i><span>Cài đặt</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <i class="fa-solid fa-code-branch"></i> UniRoom v2.0 &nbsp;·&nbsp; HK I 2026
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+  <div class="main-wrapper">
+
+    <!-- HEADER / TOP NAVBAR -->
+    <header class="header">
+      <div class="header-left">
+        <button class="btn-icon" id="toggleSidebar" title="Mở/Đóng menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="breadcrumb" id="breadcrumb">Dashboard</div>
+      </div>
+      <div class="header-right">
+        <button class="btn-icon" title="Thông báo">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge">3</span>
+        </button>
+        <button class="btn-icon" title="Tìm kiếm">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <div class="header-user">
+          <div class="user-avatar sm">AD</div>
+          <span>Admin</span>
+          <i class="fa-solid fa-caret-down" style="font-size:10px"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="page-content" id="pageContent">
+      <!-- pages injected by JS -->
+    </main>
+
+  </div>
+
+  <!-- ============================================================
+     MODAL – ADD / EDIT
+============================================================ -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">Thêm mới</h3>
+        <button class="btn-icon" id="closeFormModal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- form injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     MODAL – CONFIRM DELETE
+============================================================ -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-box modal-sm" style="border-top-color:var(--alt-red)">
+      <div class="modal-header danger">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;Xác nhận xóa</h3>
+        <button class="btn-icon" id="closeDeleteModal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="deleteMessage">Bạn có chắc muốn xóa mục này không? Hành động này không thể hoàn tác.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="cancelDelete">Hủy</button>
+        <button class="btn btn-danger" id="confirmDelete"><i class="fa-solid fa-trash"></i> Xóa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

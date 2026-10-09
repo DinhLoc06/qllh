@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: uniroom
+  datasource:
+    url: jdbc:sqlserver://${DB_HOST:localhost}:${DB_PORT:1433};instanceName=${DB_INSTANCE:SQLEXPRESS};databaseName=${DB_NAME:UniRoom};integratedSecurity=true;authenticationScheme=NativeAuthentication;encrypt=true;trustServerCertificate=${DB_TRUST_SERVER_CERTIFICATE:true}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+  jackson:
+    default-property-inclusion: non_null
+server:
+  port: ${PORT:8080}
+  error:
+    include-stacktrace: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
